@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ica | Portofolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Nunito:wght@400;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--sky:#c4defa;--ink:#14213d;--yellow:#ffe14d;--pink:#ffd3e2;--mint:#cdf3df;--lav:#e3dcff;--rose:#d6336c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--sky);color:var(--ink);font-family:Nunito,"Segoe UI",Arial,sans-serif;font-size:17px;line-height:1.6}
+a{color:var(--ink);font-weight:600;text-decoration-thickness:2px;text-underline-offset:3px}
+a:hover{background:var(--yellow)}
+a:focus-visible{outline:3px solid var(--rose);outline-offset:2px}
+.wrap{max-width:980px;margin:0 auto;padding:40px 24px 64px}
+h1,h2,h3{font-family:"Bricolage Grotesque",Arial Black,Arial,sans-serif;margin:0;line-height:1.1}
+h1{font-size:clamp(2.9rem,10vw,6rem);font-weight:800}
+.hl{background:linear-gradient(transparent 60%,var(--yellow) 60%);padding:0 .05em}
+h2{font-size:1.9rem;font-weight:800;margin:56px 0 22px;text-decoration:underline wavy var(--rose);text-decoration-thickness:3px;text-underline-offset:8px}
+h3{font-size:1.2rem;font-weight:800;margin-bottom:6px}
+p{margin:0 0 12px}
+.top{display:grid;grid-template-columns:1fr 220px;gap:40px;align-items:center}
+.sub{font-size:1.15rem;margin-top:18px;max-width:34ch}
+.note{font-family:Caveat,cursive;font-size:1.7rem;color:var(--rose);display:inline-block;transform:rotate(-2deg);margin-top:10px}
+.polaroid{background:#fff;border:3px solid var(--ink);padding:10px 10px 38px;transform:rotate(3deg);position:relative;box-shadow:5px 5px 0 var(--ink)}
+.polaroid::before{content:"";position:absolute;top:-14px;left:50%;width:84px;height:26px;margin-left:-42px;background:rgba(255,225,77,.85);transform:rotate(-4deg)}
+.polaroid .img{aspect-ratio:1;background:#eee;display:flex;align-items:center;justify-content:center;text-align:center;font-size:.8rem;padding:8px}
+.polaroid img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.sheet{background:#fff;border:3px solid var(--ink);padding:22px 24px;box-shadow:6px 6px 0 var(--ink)}
+.big{background:var(--yellow);padding:28px 30px}
+.r1{transform:rotate(-.6deg)}.r2{transform:rotate(.7deg)}.r3{transform:rotate(-.4deg)}.r4{transform:rotate(.5deg)}
+.pink{background:var(--pink)}.mint{background:var(--mint)}.lav{background:var(--lav)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:30px}
+.grid .wide{grid-column:1/-1}
+.stamp{display:inline-block;font-family:Caveat,cursive;font-size:1.3rem;border:2px solid var(--ink);border-radius:4px;padding:0 10px;margin-bottom:10px;transform:rotate(-2deg);background:#fff}
+.tech{font-size:.9rem;opacity:.8;margin:0}
+.todo{background:#fff;border:1px dashed #c0392b;color:#a32a1d;padding:0 5px;font-size:.92em}
+ul.plain{margin:0;padding-left:20px}
+.contact{font-size:1.1rem}
+@media(max-width:760px){
+  .top{grid-template-columns:1fr}
+  .polaroid{max-width:200px}
+  .grid{grid-template-columns:1fr}
+  .r1,.r2,.r3,.r4{transform:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div>
+    <h1>Halo, saya <span class="hl">Ica</span>.</h1>
+    <p class="sub">Yusliza Imas Hidayu, mahasiswa Informatika di Universitas Ahmad Dahlan, Yogyakarta.</p>
+    <span class="note">lagi nulis skripsi nih</span>
+  </div>
+  <div class="polaroid"><div class="img"><span class="todo">pasang fotomu: &lt;img src="foto.jpg"&gt;</span></div></div>
+</header>
+
+<h2>Yang sedang saya kerjakan</h2>
+<article class="sheet big r1">
+  <span class="stamp">skripsi</span>
+  <h3>Rekomendasi Top-5 drama Korea</h3>
+  <p>Kamu pilih genre dan beri rating untuk drama yang sudah ditonton, lalu aplikasinya mengusulkan lima drama berikutnya. Rekomendasinya dihitung dengan dua cara: mencari drama yang mirip dari genre dan tag (TF-IDF dan cosine similarity), dan melihat pola rating penonton lain (SVD). Dua hasil itu digabung dengan bobot.</p>
+  <p>Di pengujian saya, gabungan ini lebih akurat daripada salah satunya saja, diukur dengan Precision, Recall, dan F1 pada Top-5.</p>
+  <p class="tech">Python, Flask, Pandas, NumPy, Scikit-learn, Surprise. Data dari Kaggle.</p>
+</article>
+
+<h2>Proyek lain</h2>
+<div class="grid">
+  <article class="sheet pink r2">
+    <h3>Gaya hidup mahasiswa dan nilai</h3>
+    <p>Mengelompokkan mahasiswa dengan UMAP dan HDBSCAN, lalu menjelaskan hasilnya dengan SHAP. Silhouette 0,369. Random Forest: akurasi 0,899, macro F1 0,902.</p>
+    <p class="tech">Mata kuliah Pengenalan Pola. <span class="todo">tautan</span></p>
+  </article>
+  <article class="sheet mint r3">
+    <h3>Segmentasi pelanggan e-commerce</h3>
+    <p>K-Means dengan K = 4 (silhouette 0,346), lalu segmennya diklasifikasikan dengan Random Forest, akurasi 99,70%.</p>
+    <p class="tech">Python</p>
+  </article>
+  <article class="sheet lav r4">
+    <h3>Analisis sentimen</h3>
+    <p>Tiga kelas sentimen, membandingkan LSTM dengan SVM berbasis TF-IDF. <span class="todo">hasil akhir</span></p>
+    <p class="tech">Mata kuliah NLP</p>
+  </article>
+  <article class="sheet r1">
+    <h3>Sistem manajemen laundry</h3>
+    <p>Perancangan lengkap: Use Case, Activity, Sequence, Class Diagram, ERD, dan Data Dictionary.</p>
+    <p class="tech">UML</p>
+  </article>
+  <article class="sheet mint r2">
+    <h3>Website portofolio</h3>
+    <p>Proyek tugas akhir mata kuliah PWEB.</p>
+    <p class="tech"><a href="https://github.com/yslz16/PROJEK-TUGAS-AKHIR-PWEB">GitHub</a></p>
+  </article>
+  <article class="sheet lav r3">
+    <h3>Hack The Campus</h3>
+    <p>Game multimedia interaktif, tugas mata kuliah Multimedia Interaktif.</p>
+    <p class="tech"><a href="https://github.com/yusliza16/Tugas-Multimedia-Interaktif">GitHub</a></p>
+  </article>
+  <article class="sheet pink r4">
+    <h3>Ninja Game</h3>
+    <p>Game berbasis web.</p>
+    <p class="tech"><a href="https://github.com/yslz16/Responsi-game">GitHub</a></p>
+  </article>
+  <article class="sheet r1">
+    <h3>Aplikasi pencatat pola makan</h3>
+    <p>Proyek mata kuliah PMOB.</p>
+    <p class="tech"><a href="https://github.com/yusliza16/proyek-PMOB">GitHub</a></p>
+  </article>
+</div>
+
+<h2>Pengalaman</h2>
+<div class="sheet r3">
+  <p><strong>Pendamping dosen PMPP</strong>, Informatika UAD, 2026.<br>
+  Ikut dosen PMPP di Lab Komputasi Dasar dan bertugas mengajar guru TK memakai GCompris, aplikasi belajar untuk anak.</p>
+  <p style="margin:0"><strong>KKN, PDD</strong>, Desa Karang Wuluh Lor, Temon, Kulon Progo, 2026.<br>
+  Di divisi PDD, tugas saya mendokumentasikan setiap kegiatan KKN.</p>
+</div>
+
+<h2>Alat yang saya pakai</h2>
+<p>Python, Flask, HTML/CSS, JavaScript, C++, MySQL, Git/GitHub. Untuk data: Pandas, NumPy, Scikit-learn, Surprise.</p>
+
+<h2>Kontak</h2>
+<p class="contact"><a href="mailto:yuslizaimas16@gmail.com">yuslizaimas16@gmail.com</a><br>
+<a href="https://github.com/yusliza16">GitHub</a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/yusliza-imas">LinkedIn</a> &nbsp;|&nbsp; <a href="cv.pdf" download>Unduh CV</a></p>
+
+</div>
+</body>
+</html>
